@@ -31,7 +31,7 @@ export const metadata: Metadata = {
     title: "Ola Brazil — Brazilian Shop, Butcher & Cafe in Bournemouth",
     description:
       "Authentic Brazilian meats, imported goods, and fresh cafe treats in Bournemouth. Visit Ola Brazil at 339 Wimborne Rd. 5-star rated on Google.",
-    url: "https://ola-brazil.co.uk",
+    url: "https://olabrazil.co.uk",
     siteName: "Ola Brazil",
     locale: "en_GB",
     type: "website",
@@ -51,7 +51,7 @@ export default function RootLayout({
       <body className="bg-bg text-text min-h-screen flex flex-col antialiased">
         <JsonLd />
         <Navbar />
-        <main className="flex-1 pt-24">{children}</main>
+        <main className="flex-1">{children}</main>
         <Footer />
         <WhatsAppButton />
       </body>

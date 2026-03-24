@@ -5,11 +5,12 @@
   --color-primary-light: #009C3B;
   --color-secondary: #FFDF00;
   --color-accent: #002776;
-  --color-bg: #FFF8F0;
+  --color-bg: #FAFAF7;
   --color-text: #1A1A1A;
-  --color-muted: #4A4A4A;
+  --color-muted: #6B7280;
   --color-green-bg: #00752C;
   --color-whatsapp: #25D366;
+  --color-warm: #92400E;
 }
 
 @theme inline {
@@ -17,27 +18,41 @@
   --color-primary-light: #009C3B;
   --color-secondary: #FFDF00;
   --color-accent: #002776;
-  --color-bg: #FFF8F0;
+  --color-bg: #FAFAF7;
   --color-text: #1A1A1A;
-  --color-muted: #4A4A4A;
+  --color-muted: #6B7280;
   --color-green-bg: #00752C;
   --color-whatsapp: #25D366;
+  --color-warm: #92400E;
   --font-heading: var(--font-playfair);
   --font-body: var(--font-karla);
 }
 
-/* Aurora-inspired animated gradient for hero sections */
-@keyframes aurora {
-  0% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-  100% { background-position: 0% 50%; }
+html {
+  scroll-behavior: smooth;
 }
 
-@keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-20px); }
+body {
+  font-family: var(--font-body), sans-serif;
+  line-height: 1.6;
 }
 
+h1,
+h2 {
+  font-family: var(--font-heading), serif;
+  line-height: 1.15;
+}
+
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-body), sans-serif;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+/* Animations */
 @keyframes whatsapp-pulse {
   0% {
     transform: scale(1);
@@ -49,68 +64,43 @@
   }
 }
 
-@keyframes slide-up {
+@keyframes hero-zoom {
   from {
-    opacity: 0;
-    transform: translateY(30px);
+    transform: scale(1);
   }
   to {
-    opacity: 1;
-    transform: translateY(0);
+    transform: scale(1.05);
   }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
-}
-
-body {
-  font-family: var(--font-body), sans-serif;
-  line-height: 1.6;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-family: var(--font-heading), serif;
-  line-height: 1.2;
-}
-
-/* Vibrant block-based section styling */
-.section-block {
-  padding: 5rem 1rem;
-}
-
-@media (min-width: 768px) {
-  .section-block {
-    padding: 6rem 2rem;
+@keyframes bounce-gentle {
+  0%,
+  100% {
+    transform: translateY(0) translateX(-50%);
+  }
+  50% {
+    transform: translateY(8px) translateX(-50%);
   }
 }
 
-/* Bold gradient text effect */
+/* Gradient text — used sparingly */
 .gradient-text {
-  background: linear-gradient(135deg, #007A2F, #002776, #009C3B);
+  background: linear-gradient(135deg, #007a2f, #002776);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
 }
 
-/* Animated aurora background */
-.aurora-bg {
-  background: linear-gradient(-45deg, #002776, #007A2F, #00752C, #002776, #009C3B);
-  background-size: 400% 400%;
-  animation: aurora 12s ease infinite;
-}
-
-/* Yellow accent stripe */
-.accent-stripe {
-  background: linear-gradient(90deg, transparent, #FFDF00, transparent);
-  height: 4px;
-}
-
+/* Respect motion preferences */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
+  }
+  html {
+    scroll-behavior: auto;
   }
 }

@@ -20,7 +20,9 @@ export default function Navbar() {
 
   useEffect(() => {
     document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => { document.body.style.overflow = ""; };
+    return () => {
+      document.body.style.overflow = "";
+    };
   }, [isOpen]);
 
   return (
@@ -28,17 +30,17 @@ export default function Navbar() {
       className={`fixed top-4 left-4 right-4 z-40 transition-all duration-300 rounded-2xl ${
         scrolled
           ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-black/5"
-          : "bg-white/80 backdrop-blur-md"
+          : "bg-white/70 backdrop-blur-md"
       }`}
     >
-      <div className="max-w-7xl mx-auto px-6">
-        <div className="flex items-center justify-between h-16">
+      <div className="max-w-7xl mx-auto px-5">
+        <div className="flex items-center justify-between h-14">
           <Link href="/" className="flex-shrink-0 cursor-pointer">
             <Image
               src="/logo-tagline.jpeg"
               alt="Ola Brazil"
-              width={48}
-              height={48}
+              width={40}
+              height={40}
               className="rounded-full"
               priority
             />
@@ -65,7 +67,7 @@ export default function Navbar() {
             className="md:hidden p-2 cursor-pointer rounded-lg hover:bg-gray-100 transition-colors"
             aria-label="Open menu"
           >
-            <Menu className="w-6 h-6" />
+            <Menu className="w-5 h-5" />
           </button>
         </div>
       </div>
@@ -74,16 +76,16 @@ export default function Navbar() {
       {isOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div
-            className="absolute inset-0 bg-black/60 backdrop-blur-sm"
+            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-0 bottom-0 w-80 bg-white shadow-2xl">
-            <div className="flex items-center justify-between p-6 border-b border-gray-100">
+          <div className="absolute right-0 top-0 bottom-0 w-72 bg-white shadow-2xl flex flex-col">
+            <div className="flex items-center justify-between p-5 border-b border-gray-100">
               <Image
                 src="/logo-tagline.jpeg"
                 alt="Ola Brazil"
-                width={40}
-                height={40}
+                width={36}
+                height={36}
                 className="rounded-full"
               />
               <button
@@ -91,16 +93,16 @@ export default function Navbar() {
                 className="p-2 cursor-pointer rounded-lg hover:bg-gray-100"
                 aria-label="Close menu"
               >
-                <X className="w-6 h-6" />
+                <X className="w-5 h-5" />
               </button>
             </div>
-            <div className="flex flex-col p-6 gap-2">
+            <div className="flex flex-col p-5 gap-1 flex-1">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-lg font-semibold py-3 px-4 rounded-xl cursor-pointer transition-all duration-200 ${
+                  className={`text-base font-semibold py-3 px-4 rounded-xl cursor-pointer transition-all duration-200 ${
                     pathname === link.href
                       ? "bg-primary text-white"
                       : "text-text hover:bg-primary/10"
@@ -110,8 +112,11 @@ export default function Navbar() {
                 </Link>
               ))}
             </div>
-            {/* Bottom accent */}
-            <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-primary via-secondary to-accent" />
+            <div className="p-5 border-t border-gray-100">
+              <p className="text-xs text-muted">
+                339 Wimborne Rd, Bournemouth
+              </p>
+            </div>
           </div>
         </div>
       )}

@@ -1,7 +1,7 @@
 "use client";
 
 import { useState } from "react";
-import { Send } from "lucide-react";
+import { Send, CheckCircle } from "lucide-react";
 
 export default function ContactForm() {
   const [form, setForm] = useState({ name: "", email: "", message: "" });
@@ -35,13 +35,9 @@ export default function ContactForm() {
   if (submitted) {
     return (
       <div className="text-center py-12">
-        <div className="w-16 h-16 bg-[var(--color-primary-light)]/20 rounded-full flex items-center justify-center mx-auto mb-4">
-          <Send className="w-8 h-8 text-[var(--color-primary)]" />
-        </div>
-        <h3 className="text-xl font-bold text-[var(--color-accent)] mb-2">
-          Thank you!
-        </h3>
-        <p className="text-[var(--color-muted)]">
+        <CheckCircle className="w-12 h-12 text-primary mx-auto mb-4" />
+        <h3 className="text-lg font-bold text-text mb-2">Thank you!</h3>
+        <p className="text-muted text-sm">
           Your email client should have opened. If not, feel free to call or
           WhatsApp us directly.
         </p>
@@ -50,11 +46,11 @@ export default function ContactForm() {
   }
 
   return (
-    <form onSubmit={handleSubmit} className="space-y-6">
+    <form onSubmit={handleSubmit} className="space-y-5">
       <div>
         <label
           htmlFor="name"
-          className="block text-sm font-medium text-[var(--color-text)] mb-1"
+          className="block text-sm font-medium text-text mb-1.5"
         >
           Name
         </label>
@@ -63,7 +59,7 @@ export default function ContactForm() {
           type="text"
           value={form.name}
           onChange={(e) => setForm({ ...form, name: e.target.value })}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all duration-200"
+          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 bg-white"
           placeholder="Your name"
         />
         {errors.name && (
@@ -73,7 +69,7 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="email"
-          className="block text-sm font-medium text-[var(--color-text)] mb-1"
+          className="block text-sm font-medium text-text mb-1.5"
         >
           Email
         </label>
@@ -82,7 +78,7 @@ export default function ContactForm() {
           type="email"
           value={form.email}
           onChange={(e) => setForm({ ...form, email: e.target.value })}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all duration-200"
+          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 bg-white"
           placeholder="your@email.com"
         />
         {errors.email && (
@@ -92,16 +88,16 @@ export default function ContactForm() {
       <div>
         <label
           htmlFor="message"
-          className="block text-sm font-medium text-[var(--color-text)] mb-1"
+          className="block text-sm font-medium text-text mb-1.5"
         >
           Message
         </label>
         <textarea
           id="message"
-          rows={5}
+          rows={4}
           value={form.message}
           onChange={(e) => setForm({ ...form, message: e.target.value })}
-          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-[var(--color-accent)] focus:ring-2 focus:ring-[var(--color-accent)]/20 transition-all duration-200 resize-none"
+          className="w-full px-4 py-3 border border-gray-200 rounded-lg text-base focus:outline-none focus:border-primary focus:ring-2 focus:ring-primary/20 transition-all duration-200 resize-none bg-white"
           placeholder="How can we help?"
         />
         {errors.message && (
@@ -110,7 +106,7 @@ export default function ContactForm() {
       </div>
       <button
         type="submit"
-        className="w-full bg-[var(--color-accent)] text-white py-3 px-6 rounded-lg font-semibold hover:opacity-90 hover:-translate-y-0.5 transition-all duration-200 cursor-pointer flex items-center justify-center gap-2"
+        className="w-full bg-primary text-white py-3 px-6 rounded-lg font-semibold hover:bg-primary-light transition-colors duration-200 cursor-pointer flex items-center justify-center gap-2"
       >
         <Send className="w-4 h-4" />
         Send Message

@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import { Globe, Beef, Coffee, Star } from "lucide-react";
-import { businessInfo } from "@/lib/data";
+import { businessInfo, stockImages } from "@/lib/data";
+import ScrollReveal from "@/components/ScrollReveal";
 
 export const metadata: Metadata = {
   title: "About Ola Brazil — Our Story",
@@ -11,24 +13,24 @@ export const metadata: Metadata = {
 const values = [
   {
     icon: Globe,
-    title: "Authentic Brazilian Imports",
+    title: "Authentic Imports",
     description:
       "We source directly from trusted suppliers in Brazil, bringing you genuine flavours. From Guarana to Farofa, every item is the real deal.",
     color: "bg-primary",
   },
   {
     icon: Beef,
-    title: "Premium Butcher Cuts",
+    title: "Premium Cuts",
     description:
       "Our butcher counter offers the finest Brazilian cuts — Picanha, Linguica, Fraldinha. Each piece selected for quality, cut fresh for you.",
     color: "bg-accent",
   },
   {
     icon: Coffee,
-    title: "Fresh Cafe Treats Daily",
+    title: "Fresh Daily",
     description:
       "Every morning, fresh coxinhas, pao de queijo, brigadeiros and more. Paired with rich Brazilian coffee — a piece of Brazil in every bite.",
-    color: "bg-[#8B6914]",
+    color: "bg-warm",
   },
 ];
 
@@ -36,116 +38,134 @@ export default function AboutPage() {
   return (
     <>
       {/* Hero */}
-      <section className="aurora-bg section-block relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-secondary/20 rounded-full blur-3xl" />
-        </div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h1 className="text-5xl md:text-7xl font-bold text-white mb-6">
+      <section className="relative h-[50vh] min-h-[320px] max-h-[500px] flex items-center justify-center overflow-hidden">
+        <Image
+          src={stockImages.aboutHero}
+          alt="Inside a warm restaurant"
+          fill
+          className="object-cover"
+          priority
+          sizes="100vw"
+        />
+        <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-black/40 to-black/20" />
+        <div className="relative z-10 text-center px-4">
+          <h1 className="text-4xl md:text-5xl font-bold text-white mb-3">
             Our <span className="text-secondary">Story</span>
           </h1>
-          <p className="text-xl text-white/70 max-w-2xl mx-auto">
+          <p className="text-base text-white/70 max-w-md mx-auto">
             Bringing the warmth, flavour, and spirit of Brazil to Bournemouth
           </p>
         </div>
       </section>
 
-      {/* Story Content */}
-      <section className="section-block bg-bg">
-        <div className="max-w-3xl mx-auto">
-          <div className="space-y-6 text-lg text-muted leading-relaxed">
-            <p>
-              <span className="text-3xl font-bold text-primary float-left mr-3 mt-1 leading-none">O</span>
-              la Brazil was born from a simple dream — to bring the warmth,
-              flavour, and spirit of Brazil to Bournemouth. What started as a
-              passion for authentic Brazilian food has grown into a beloved local
-              destination where the Brazilian community and curious food lovers
-              come together.
-            </p>
-            <p>
-              We are more than just a shop. We are a butcher that takes pride in
-              every cut, a store filled with the tastes of home, and a cafe where
-              every bite tells a story. Whether you are Brazilian missing the
-              flavours of home or a local discovering something new, you are
-              always welcome here.
-            </p>
-            <p>
-              At Ola Brazil, every product is chosen with care, every recipe is
-              made with love, and every customer is treated like family. That is
-              the Brazilian way.
-            </p>
-          </div>
-
-          {/* Placeholder image */}
-          <div className="mt-12 aspect-video rounded-2xl bg-gradient-to-br from-primary/10 via-secondary/10 to-accent/10 flex items-center justify-center border-2 border-dashed border-primary/20 relative overflow-hidden">
-            <div className="absolute inset-0 opacity-5">
-              <div className="absolute top-8 right-8 w-32 h-32 border-4 border-current rounded-full" />
-              <div className="absolute bottom-8 left-8 w-24 h-24 border-4 border-current rotate-45" />
+      {/* Story */}
+      <section className="py-20 md:py-28 px-4 bg-white">
+        <div className="max-w-6xl mx-auto">
+          <ScrollReveal>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <div className="space-y-5 text-base text-muted leading-relaxed">
+                <p className="text-lg text-text font-medium">
+                  Ola Brazil was born from a simple dream — to bring the warmth,
+                  flavour, and spirit of Brazil to Bournemouth.
+                </p>
+                <p>
+                  What started as a passion for authentic Brazilian food has
+                  grown into a beloved local destination where the Brazilian
+                  community and curious food lovers come together.
+                </p>
+                <p>
+                  We are more than just a shop. We are a butcher that takes
+                  pride in every cut, a store filled with the tastes of home,
+                  and a cafe where every bite tells a story. Whether you are
+                  Brazilian missing the flavours of home or a local discovering
+                  something new, you are always welcome here.
+                </p>
+                <p>
+                  At Ola Brazil, every product is chosen with care, every recipe
+                  is made with love, and every customer is treated like family.
+                  That is the Brazilian way.
+                </p>
+              </div>
+              <div className="relative rounded-xl overflow-hidden aspect-[4/3]">
+                <Image
+                  src={stockImages.storeFront}
+                  alt="Ola Brazil store"
+                  fill
+                  className="object-cover"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                />
+              </div>
             </div>
-            <span className="text-muted font-medium relative z-10">Shop photo coming soon</span>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
 
-      {/* Values — Bold color blocks */}
-      <section className="section-block bg-white">
+      {/* Values */}
+      <section className="py-20 md:py-28 px-4 bg-bg">
         <div className="max-w-6xl mx-auto">
-          <h2 className="text-4xl md:text-5xl font-bold text-center mb-16">
-            <span className="gradient-text">What Makes Us Different</span>
-          </h2>
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {values.map((value) => (
-              <div
-                key={value.title}
-                className="group text-center rounded-2xl overflow-hidden hover:scale-[1.02] transition-all duration-300 shadow-lg"
-              >
-                <div className={`${value.color} p-10`}>
-                  <value.icon className="w-14 h-14 text-white mx-auto group-hover:scale-110 transition-transform duration-300" />
-                </div>
-                <div className="bg-white p-8 border border-gray-100 border-t-0">
-                  <h3 className="text-xl font-bold text-text mb-3">
+          <ScrollReveal>
+            <p className="text-sm font-semibold text-primary tracking-widest uppercase mb-3 text-center">
+              What Makes Us Different
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold text-center mb-14">
+              Our Values
+            </h2>
+          </ScrollReveal>
+
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+            {values.map((value, i) => (
+              <ScrollReveal key={value.title} delay={i * 100}>
+                <div className="bg-white rounded-xl p-8 shadow-sm border border-gray-100 text-center h-full">
+                  <div
+                    className={`w-12 h-12 rounded-xl ${value.color} flex items-center justify-center mx-auto mb-5`}
+                  >
+                    <value.icon className="w-6 h-6 text-white" />
+                  </div>
+                  <h3 className="text-lg font-bold text-text mb-3">
                     {value.title}
                   </h3>
-                  <p className="text-muted leading-relaxed">
+                  <p className="text-muted text-sm leading-relaxed">
                     {value.description}
                   </p>
                 </div>
-                <div className="h-1 bg-secondary" />
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Community — Green block */}
-      <section className="section-block bg-green-bg relative overflow-hidden">
-        <div className="absolute inset-0 overflow-hidden">
-          <div className="absolute top-10 right-10 w-72 h-72 bg-secondary/10 rounded-full blur-3xl" />
-        </div>
-        <div className="max-w-4xl mx-auto text-center relative z-10">
-          <h2 className="text-4xl md:text-5xl font-bold text-white mb-6">
-            Part of the Bournemouth Community
-          </h2>
-          <p className="text-white/80 text-lg mb-10 leading-relaxed max-w-2xl mx-auto">
-            From our regulars who pop in for their weekly Picanha to first-time
-            visitors discovering Pao de Queijo — every visit makes our day.
-          </p>
-          <div className="inline-flex flex-col items-center bg-white/10 backdrop-blur-sm rounded-2xl p-8 border border-white/10">
-            <div className="flex items-center gap-2 mb-3">
-              {[...Array(5)].map((_, i) => (
-                <Star
-                  key={i}
-                  className="w-7 h-7 fill-secondary text-secondary"
-                />
-              ))}
+      {/* Community */}
+      <section className="py-20 md:py-28 px-4 bg-white">
+        <div className="max-w-3xl mx-auto text-center">
+          <ScrollReveal>
+            <p className="text-sm font-semibold text-primary tracking-widest uppercase mb-3">
+              Our Community
+            </p>
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">
+              Part of Bournemouth
+            </h2>
+            <p className="text-muted leading-relaxed mb-10">
+              From our regulars who pop in for their weekly Picanha to
+              first-time visitors discovering Pao de Queijo — every visit makes
+              our day.
+            </p>
+            <div className="inline-flex flex-col items-center bg-bg rounded-xl p-8 border border-gray-100">
+              <div className="flex items-center gap-1 mb-3">
+                {[...Array(5)].map((_, i) => (
+                  <Star
+                    key={i}
+                    className="w-5 h-5 fill-yellow-400 text-yellow-400"
+                  />
+                ))}
+              </div>
+              <p className="text-3xl font-bold mb-1">
+                {businessInfo.googleRating}
+              </p>
+              <p className="text-muted text-sm">
+                {businessInfo.googleReviewCount} Google Reviews
+              </p>
             </div>
-            <p className="text-4xl font-bold text-white mb-1">
-              {businessInfo.googleRating}
-            </p>
-            <p className="text-white/60">
-              {businessInfo.googleReviewCount} Google Reviews
-            </p>
-          </div>
+          </ScrollReveal>
         </div>
       </section>
     </>
