@@ -1,5 +1,9 @@
 import type { Metadata } from "next";
 import { Playfair_Display_SC, Karla } from "next/font/google";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import WhatsAppButton from "@/components/WhatsAppButton";
+import JsonLd from "@/components/JsonLd";
 import "./globals.css";
 
 const playfair = Playfair_Display_SC({
@@ -32,6 +36,9 @@ export const metadata: Metadata = {
     locale: "en_GB",
     type: "website",
   },
+  twitter: {
+    card: "summary_large_image",
+  },
 };
 
 export default function RootLayout({
@@ -42,7 +49,11 @@ export default function RootLayout({
   return (
     <html lang="en" className={`${playfair.variable} ${karla.variable}`}>
       <body className="bg-bg text-text min-h-screen flex flex-col antialiased">
-        {children}
+        <JsonLd />
+        <Navbar />
+        <main className="flex-1 pt-20">{children}</main>
+        <Footer />
+        <WhatsAppButton />
       </body>
     </html>
   );
