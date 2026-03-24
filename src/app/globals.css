@@ -13,17 +13,29 @@
 }
 
 @theme inline {
-  --color-primary: var(--color-primary);
-  --color-primary-light: var(--color-primary-light);
-  --color-secondary: var(--color-secondary);
-  --color-accent: var(--color-accent);
-  --color-bg: var(--color-bg);
-  --color-text: var(--color-text);
-  --color-muted: var(--color-muted);
-  --color-green-bg: var(--color-green-bg);
-  --color-whatsapp: var(--color-whatsapp);
+  --color-primary: #007A2F;
+  --color-primary-light: #009C3B;
+  --color-secondary: #FFDF00;
+  --color-accent: #002776;
+  --color-bg: #FFF8F0;
+  --color-text: #1A1A1A;
+  --color-muted: #4A4A4A;
+  --color-green-bg: #00752C;
+  --color-whatsapp: #25D366;
   --font-heading: var(--font-playfair);
   --font-body: var(--font-karla);
+}
+
+/* Aurora-inspired animated gradient for hero sections */
+@keyframes aurora {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
 }
 
 @keyframes whatsapp-pulse {
@@ -37,25 +49,66 @@
   }
 }
 
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes shimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
 body {
   font-family: var(--font-body), sans-serif;
   line-height: 1.6;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
+h1, h2, h3, h4, h5, h6 {
   font-family: var(--font-heading), serif;
   line-height: 1.2;
 }
 
+/* Vibrant block-based section styling */
+.section-block {
+  padding: 5rem 1rem;
+}
+
+@media (min-width: 768px) {
+  .section-block {
+    padding: 6rem 2rem;
+  }
+}
+
+/* Bold gradient text effect */
+.gradient-text {
+  background: linear-gradient(135deg, #007A2F, #002776, #009C3B);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Animated aurora background */
+.aurora-bg {
+  background: linear-gradient(-45deg, #002776, #007A2F, #00752C, #002776, #009C3B);
+  background-size: 400% 400%;
+  animation: aurora 12s ease infinite;
+}
+
+/* Yellow accent stripe */
+.accent-stripe {
+  background: linear-gradient(90deg, transparent, #FFDF00, transparent);
+  height: 4px;
+}
+
 @media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
+  *, *::before, *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;

@@ -1,0 +1,296 @@
+- generic [active] [ref=e1]:
+  - banner [ref=e2]:
+    - generic [ref=e4]:
+      - link "SMD Accountancy" [ref=e6] [cursor=pointer]:
+        - /url: /
+        - generic [ref=e7]: SMD
+        - generic [ref=e8]: Accountancy
+      - navigation [ref=e9]:
+        - link "Home" [ref=e10] [cursor=pointer]:
+          - /url: /
+        - link "About Us" [ref=e11] [cursor=pointer]:
+          - /url: /about
+        - link "Who We Help" [ref=e12] [cursor=pointer]:
+          - /url: /who-we-help
+        - link "Services" [ref=e13] [cursor=pointer]:
+          - /url: /services
+        - link "Tools" [ref=e14] [cursor=pointer]:
+          - /url: /tools
+        - link "Blog" [ref=e15] [cursor=pointer]:
+          - /url: /blog
+        - link "Contact" [ref=e16] [cursor=pointer]:
+          - /url: /contact
+      - generic [ref=e17]:
+        - generic [ref=e18]:
+          - button "EN" [ref=e20]:
+            - img [ref=e21]
+            - text: EN
+          - generic [ref=e22]:
+            - generic [ref=e23]: ·
+            - button "PT" [ref=e24]:
+              - img [ref=e25]
+              - text: PT
+          - generic [ref=e26]:
+            - generic [ref=e27]: ·
+            - button "IT" [ref=e28]:
+              - img [ref=e29]
+              - text: IT
+        - link "Book a Free 20-Min Call" [ref=e30] [cursor=pointer]:
+          - /url: https://calendly.com/smdaccountancy-info/30min
+  - main [ref=e31]:
+    - generic [ref=e33]:
+      - generic [ref=e34]:
+        - generic [ref=e37]: UK Registered Accountants
+        - heading "More Than Numbers." [level=1] [ref=e38]:
+          - generic [ref=e39]: More Than
+          - generic [ref=e40]: Numbers.
+        - paragraph [ref=e41]: London-based accountants serving clients across the UK. Self assessment, bookkeeping, VAT, corporation tax, and Making Tax Digital — done properly, for sole traders, limited companies, contractors, and landlords.
+        - generic [ref=e42]:
+          - link "Book a Consultation" [ref=e43] [cursor=pointer]:
+            - /url: https://calendly.com/smdaccountancy-info/30min
+          - link "Our Services" [ref=e44] [cursor=pointer]:
+            - /url: /services
+      - generic [ref=e47]: Scroll
+    - generic [ref=e50]:
+      - generic [ref=e53]:
+        - generic [ref=e54]: Human First
+        - generic [ref=e55]: Calls and meetings over template emails. Always.
+      - generic [ref=e58]:
+        - generic [ref=e59]: Strategic
+        - generic [ref=e60]: Beyond compliance — toward growth and clarity.
+      - generic [ref=e63]:
+        - generic [ref=e64]: Transparent
+        - generic [ref=e65]: Clear, upfront pricing. No hidden fees, ever.
+      - generic [ref=e68]:
+        - generic [ref=e69]: Responsive
+        - generic [ref=e70]: Fast, direct answers from your named accountant.
+    - generic [ref=e72]:
+      - generic [ref=e75]:
+        - paragraph [ref=e76]: Making Tax Digital — April 2026
+        - paragraph [ref=e77]: From April 2026, sole traders and landlords earning over £50,000 must submit quarterly tax updates digitally to HMRC. We're helping clients prepare now — not at the last minute.
+      - link "Are you ready? →" [ref=e78] [cursor=pointer]:
+        - /url: https://calendly.com/smdaccountancy-info/30min
+        - text: Are you ready?
+        - generic [ref=e79]: →
+    - generic [ref=e82]:
+      - generic [ref=e83]:
+        - generic [ref=e86]: About SMD
+        - blockquote [ref=e87]: "\"Accountancy is more than just numbers.\""
+        - paragraph [ref=e89]: It's comprehending the financial health of an individual or company and understanding what is necessary to achieve certain goals.
+        - paragraph [ref=e90]: At SMD Accountancy we are not simply worried about your figures — we are more concerned about your plans and what we can do to help you.
+        - link "Our story →" [ref=e91] [cursor=pointer]:
+          - /url: /about
+          - text: Our story
+          - generic [ref=e92]: →
+      - generic [ref=e93]:
+        - img "Professional business consultation" [ref=e94]
+        - generic [ref=e96]:
+          - generic [ref=e97]: Our Goal
+          - paragraph [ref=e98]: "\"Our goal is to provide an effective and simple way of communication with our clients.\""
+          - link "See How We Work" [ref=e99] [cursor=pointer]:
+            - /url: https://calendly.com/smdaccountancy-info/30min
+    - generic [ref=e101]:
+      - generic [ref=e102]:
+        - generic [ref=e103]:
+          - generic [ref=e106]: What We Do
+          - heading "Services Built Around Your Needs" [level=2] [ref=e107]:
+            - generic [ref=e108]: Services Built Around
+            - text: Your Needs
+        - link "View all services →" [ref=e109] [cursor=pointer]:
+          - /url: /services
+          - text: View all services
+          - generic [ref=e110]: →
+      - generic [ref=e111]:
+        - generic [ref=e112]:
+          - generic [ref=e113]: "01"
+          - heading "Self Assessment" [level=3] [ref=e114]
+          - paragraph [ref=e115]: Accurate, stress-free tax returns for individuals, sole traders, and directors. Filed on time, every time.
+          - link "Learn more →" [ref=e116] [cursor=pointer]:
+            - /url: /services
+            - text: Learn more
+            - generic [ref=e117]: →
+        - generic [ref=e118]:
+          - generic [ref=e119]: "02"
+          - heading "Company Accounts" [level=3] [ref=e120]
+          - paragraph [ref=e121]: Statutory accounts and corporation tax prepared and filed with Companies House and HMRC.
+          - link "Learn more →" [ref=e122] [cursor=pointer]:
+            - /url: /services
+            - text: Learn more
+            - generic [ref=e123]: →
+        - generic [ref=e124]:
+          - generic [ref=e125]: "03"
+          - heading "Bookkeeping & VAT" [level=3] [ref=e126]
+          - paragraph [ref=e127]: Keep your books clean and your VAT submissions accurate with our ongoing support.
+          - link "Learn more →" [ref=e128] [cursor=pointer]:
+            - /url: /services
+            - text: Learn more
+            - generic [ref=e129]: →
+        - generic [ref=e130]:
+          - generic [ref=e131]: "04"
+          - heading "Business Planning" [level=3] [ref=e132]
+          - paragraph [ref=e133]: Cash flow forecasting, financial projections, and strategic guidance to help you grow with confidence.
+          - link "Learn more →" [ref=e134] [cursor=pointer]:
+            - /url: /services
+            - text: Learn more
+            - generic [ref=e135]: →
+    - generic [ref=e137]:
+      - paragraph [ref=e138]: Have a question? We're one message away.
+      - generic [ref=e139]:
+        - link "Call us" [ref=e140] [cursor=pointer]:
+          - /url: tel:+447749782495
+          - img [ref=e141]
+          - text: Call us
+        - link "WhatsApp us" [ref=e143] [cursor=pointer]:
+          - /url: https://wa.me/447749782495
+          - img [ref=e144]
+          - text: WhatsApp us
+        - link "Book a Free 20-Min Call" [ref=e146] [cursor=pointer]:
+          - /url: https://calendly.com/smdaccountancy-info/30min
+    - generic [ref=e148]:
+      - heading "\"We believe in human interaction — calls and meetings over boring template emails.\"" [level=2] [ref=e150]
+      - paragraph [ref=e152]: We don't only take care of your company — we take care of you. That means a named accountant who knows your situation, and a relationship built on trust and clear communication.
+      - link "Claim Your Free 30-Min Call" [ref=e153] [cursor=pointer]:
+        - /url: https://calendly.com/smdaccountancy-info/30min
+    - generic [ref=e156]:
+      - generic [ref=e157]:
+        - generic [ref=e158]: AAT Licensed Member
+        - generic [ref=e159]: Association of Accounting Technicians
+      - generic [ref=e160]:
+        - generic [ref=e161]: HMRC Recognised Agent
+        - generic [ref=e162]: Authorised to act on your behalf
+      - generic [ref=e163]:
+        - generic [ref=e164]: Fixed-Fee Pricing
+        - generic [ref=e165]: No hourly rates, no surprises
+      - generic [ref=e166]:
+        - generic [ref=e167]: Response Within 1 Day
+        - generic [ref=e168]: Direct access to your accountant
+    - generic [ref=e170]:
+      - generic [ref=e173]: Common Questions
+      - heading "Questions People Ask Us" [level=2] [ref=e174]
+      - generic [ref=e175]:
+        - group [ref=e176] [cursor=pointer]:
+          - generic "Do I need an accountant if I'm self-employed? +" [ref=e177]:
+            - heading "Do I need an accountant if I'm self-employed?" [level=3] [ref=e178]
+            - generic [ref=e179]: +
+        - group [ref=e180] [cursor=pointer]:
+          - generic "When is the self assessment tax return deadline? +" [ref=e181]:
+            - heading "When is the self assessment tax return deadline?" [level=3] [ref=e182]
+            - generic [ref=e183]: +
+        - group [ref=e184] [cursor=pointer]:
+          - generic "Do I need to register for VAT? +" [ref=e185]:
+            - heading "Do I need to register for VAT?" [level=3] [ref=e186]
+            - generic [ref=e187]: +
+        - group [ref=e188] [cursor=pointer]:
+          - generic "What is Making Tax Digital (MTD)? +" [ref=e189]:
+            - heading "What is Making Tax Digital (MTD)?" [level=3] [ref=e190]
+            - generic [ref=e191]: +
+        - group [ref=e192] [cursor=pointer]:
+          - generic "How much does a small business accountant cost in the UK? +" [ref=e193]:
+            - heading "How much does a small business accountant cost in the UK?" [level=3] [ref=e194]
+            - generic [ref=e195]: +
+    - generic [ref=e197]:
+      - heading "Ready to Take Control of Your Finances?" [level=2] [ref=e198]
+      - paragraph [ref=e199]: Let's have a conversation about where you are and where you want to be.
+      - generic [ref=e200]:
+        - link "Book a Consultation" [ref=e201] [cursor=pointer]:
+          - /url: https://calendly.com/smdaccountancy-info/30min
+        - link "View Services" [ref=e202] [cursor=pointer]:
+          - /url: /services
+  - contentinfo [ref=e203]:
+    - generic [ref=e204]:
+      - generic [ref=e205]:
+        - generic [ref=e206]:
+          - generic [ref=e207]:
+            - generic [ref=e208]: SMD
+            - generic [ref=e209]: Accountancy
+          - paragraph [ref=e210]: Expert accounting and financial guidance for UK businesses and individuals. More than numbers — we care about your future.
+          - link "Book a Free 20-Min Call" [ref=e211] [cursor=pointer]:
+            - /url: https://calendly.com/smdaccountancy-info/30min
+        - generic [ref=e212]:
+          - heading "Navigation" [level=4] [ref=e213]
+          - list [ref=e214]:
+            - listitem [ref=e215]:
+              - link "Home" [ref=e216] [cursor=pointer]:
+                - /url: /
+            - listitem [ref=e217]:
+              - link "About Us" [ref=e218] [cursor=pointer]:
+                - /url: /about
+            - listitem [ref=e219]:
+              - link "Who We Help" [ref=e220] [cursor=pointer]:
+                - /url: /who-we-help
+            - listitem [ref=e221]:
+              - link "Services" [ref=e222] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e223]:
+              - link "Blog" [ref=e224] [cursor=pointer]:
+                - /url: /blog
+            - listitem [ref=e225]:
+              - link "Contact" [ref=e226] [cursor=pointer]:
+                - /url: /contact
+        - generic [ref=e227]:
+          - heading "Services" [level=4] [ref=e228]
+          - list [ref=e229]:
+            - listitem [ref=e230]:
+              - link "Self Assessment Tax Returns" [ref=e231] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e232]:
+              - link "Company Accounts & Corporation Tax" [ref=e233] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e234]:
+              - link "Bookkeeping & Making Tax Digital" [ref=e235] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e236]:
+              - link "VAT Returns" [ref=e237] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e238]:
+              - link "Payroll" [ref=e239] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e240]:
+              - link "Business Planning & Advisory" [ref=e241] [cursor=pointer]:
+                - /url: /services
+            - listitem [ref=e242]:
+              - link "Company Formation" [ref=e243] [cursor=pointer]:
+                - /url: /services
+        - generic [ref=e244]:
+          - heading "Get in Touch" [level=4] [ref=e245]
+          - generic [ref=e246]:
+            - paragraph [ref=e247]: London, United Kingdom
+            - paragraph [ref=e248]: Serving clients across the UK
+            - paragraph [ref=e249]:
+              - link "info@smdaccountancy.co.uk" [ref=e250] [cursor=pointer]:
+                - /url: mailto:info@smdaccountancy.co.uk
+            - paragraph [ref=e251]:
+              - link "07749 782 495" [ref=e252] [cursor=pointer]:
+                - /url: tel:+447749782495
+          - generic [ref=e253]:
+            - generic [ref=e254]:
+              - generic [ref=e255]: AAT
+              - generic [ref=e256]: Licensed Member
+            - paragraph [ref=e257]:
+              - text: HMRC Recognised Agent
+              - text: UK Registered
+      - generic [ref=e259]:
+        - paragraph [ref=e260]: © 2026 SMD Accountancy. All rights reserved.
+        - generic [ref=e261]:
+          - link "Privacy Policy" [ref=e262] [cursor=pointer]:
+            - /url: /privacy
+          - generic [ref=e263]: ·
+          - paragraph [ref=e264]: Created by Wowness Marketing
+  - generic [ref=e266]:
+    - paragraph [ref=e267]:
+      - text: We use cookies to improve your experience and analyse site usage. See our
+      - link "Privacy Policy" [ref=e268] [cursor=pointer]:
+        - /url: /privacy
+      - text: for details.
+    - generic [ref=e269]:
+      - button "Decline" [ref=e270]
+      - button "Accept" [ref=e271]
+  - generic [ref=e272]:
+    - link "Got a question? 👋 Chat with us on WhatsApp" [ref=e273] [cursor=pointer]:
+      - /url: https://wa.me/447749782495
+      - paragraph [ref=e275]: Got a question? 👋
+      - paragraph [ref=e276]: Chat with us on WhatsApp
+    - link "Chat with us on WhatsApp" [ref=e280] [cursor=pointer]:
+      - /url: https://wa.me/447749782495
+      - img [ref=e281]
+  - alert [ref=e283]
