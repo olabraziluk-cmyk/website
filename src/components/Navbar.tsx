@@ -18,12 +18,10 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
+  // Close menu on route change
   useEffect(() => {
-    document.body.style.overflow = isOpen ? "hidden" : "";
-    return () => {
-      document.body.style.overflow = "";
-    };
-  }, [isOpen]);
+    setIsOpen(false);
+  }, [pathname]);
 
   return (
     <>
@@ -64,63 +62,62 @@ export default function Navbar() {
             </div>
 
             <button
-              onClick={() => setIsOpen(true)}
+              onClick={() => setIsOpen(!isOpen)}
               className="md:hidden p-2 cursor-pointer rounded-lg hover:bg-gray-100 transition-colors"
-              aria-label="Open menu"
+              aria-label={isOpen ? "Close menu" : "Open menu"}
             >
-              <Menu className="w-5 h-5" />
+              {isOpen ? (
+                <X className="w-5 h-5" />
+              ) : (
+                <Menu className="w-5 h-5" />
+              )}
             </button>
           </div>
         </div>
       </nav>
 
-      {/* Mobile drawer — outside nav to avoid inheriting transparency */}
+      {/* Mobile dropdown — compact card below navbar */}
       {isOpen && (
-        <div className="fixed inset-0 z-50 md:hidden">
+        <>
           <div
-            className="absolute inset-0 bg-black/50 backdrop-blur-sm"
+            className="fixed inset-0 z-30 md:hidden"
             onClick={() => setIsOpen(false)}
           />
-          <div className="absolute right-0 top-0 bottom-0 w-72 bg-white shadow-2xl flex flex-col">
-            <div className="flex items-center justify-between p-5 border-b border-gray-100">
-              <Image
-                src="/logo-tagline.jpeg"
-                alt="Ola Brazil"
-                width={36}
-                height={36}
-                className="rounded-full"
-              />
-              <button
-                onClick={() => setIsOpen(false)}
-                className="p-2 cursor-pointer rounded-lg hover:bg-gray-100"
-                aria-label="Close menu"
-              >
-                <X className="w-5 h-5" />
-              </button>
-            </div>
-            <div className="flex flex-col p-5 gap-1 flex-1">
+          <div className="fixed top-20 left-4 right-4 z-50 md:hidden bg-white rounded-2xl shadow-2xl border border-gray-100 animate-[menu-drop_0.2s_ease-out]">
+            <div className="p-3 flex flex-col gap-0.5">
               {navLinks.map((link) => (
                 <Link
                   key={link.href}
                   href={link.href}
                   onClick={() => setIsOpen(false)}
-                  className={`text-base font-semibold py-3 px-4 rounded-xl cursor-pointer transition-all duration-200 ${
+                  className={`text-sm font-semibold py-2.5 px-4 rounded-xl cursor-pointer transition-all duration-200 ${
                     pathname === link.href
                       ? "bg-primary text-white"
-                      : "text-text hover:bg-primary/10"
+                      : "text-text hover:bg-gray-50"
                   }`}
                 >
                   {link.label}
                 </Link>
               ))}
             </div>
-            <div className="p-5 border-t border-gray-100">
-              <p className="text-xs text-muted">
-                339 Wimborne Rd, Bournemouth
-              </p>
+            <div className="border-t border-gray-100 px-4 py-3 flex items-center justify-between">
+              <a
+                href="tel:01202023216"
+                className="text-xs text-muted hover:text-text transition-colors cursor-pointer"
+              >
+                01202 023216
+              </a>
+              <a
+                href="https://wa.me/447487288855"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-xs text-primary font-semibold hover:text-primary-light transition-colors cursor-pointer"
+              >
+                WhatsApp Us
+              </a>
             </div>
           </div>
-        </div>
+        </>
       )}
     </>
   );
