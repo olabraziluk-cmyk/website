@@ -26,53 +26,55 @@ export default function Navbar() {
   }, [isOpen]);
 
   return (
-    <nav
-      className={`fixed top-4 left-4 right-4 z-40 transition-all duration-300 rounded-2xl ${
-        scrolled
-          ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-black/5"
-          : "bg-white/70 backdrop-blur-md"
-      }`}
-    >
-      <div className="max-w-7xl mx-auto px-5">
-        <div className="flex items-center justify-between h-14">
-          <Link href="/" className="flex-shrink-0 cursor-pointer">
-            <Image
-              src="/logo-tagline.jpeg"
-              alt="Ola Brazil"
-              width={40}
-              height={40}
-              className="rounded-full"
-              priority
-            />
-          </Link>
+    <>
+      <nav
+        className={`fixed top-4 left-4 right-4 z-40 transition-all duration-300 rounded-2xl ${
+          scrolled
+            ? "bg-white/95 backdrop-blur-xl shadow-lg shadow-black/5"
+            : "bg-white/70 backdrop-blur-md"
+        }`}
+      >
+        <div className="max-w-7xl mx-auto px-5">
+          <div className="flex items-center justify-between h-14">
+            <Link href="/" className="flex-shrink-0 cursor-pointer">
+              <Image
+                src="/logo-tagline.jpeg"
+                alt="Ola Brazil"
+                width={40}
+                height={40}
+                className="rounded-full"
+                priority
+              />
+            </Link>
 
-          <div className="hidden md:flex items-center gap-1">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer ${
-                  pathname === link.href
-                    ? "bg-primary text-white"
-                    : "text-text hover:bg-primary/10 hover:text-primary"
-                }`}
-              >
-                {link.label}
-              </Link>
-            ))}
+            <div className="hidden md:flex items-center gap-1">
+              {navLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 cursor-pointer ${
+                    pathname === link.href
+                      ? "bg-primary text-white"
+                      : "text-text hover:bg-primary/10 hover:text-primary"
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            <button
+              onClick={() => setIsOpen(true)}
+              className="md:hidden p-2 cursor-pointer rounded-lg hover:bg-gray-100 transition-colors"
+              aria-label="Open menu"
+            >
+              <Menu className="w-5 h-5" />
+            </button>
           </div>
-
-          <button
-            onClick={() => setIsOpen(true)}
-            className="md:hidden p-2 cursor-pointer rounded-lg hover:bg-gray-100 transition-colors"
-            aria-label="Open menu"
-          >
-            <Menu className="w-5 h-5" />
-          </button>
         </div>
-      </div>
+      </nav>
 
-      {/* Mobile drawer */}
+      {/* Mobile drawer — outside nav to avoid inheriting transparency */}
       {isOpen && (
         <div className="fixed inset-0 z-50 md:hidden">
           <div
@@ -120,6 +122,6 @@ export default function Navbar() {
           </div>
         </div>
       )}
-    </nav>
+    </>
   );
 }
